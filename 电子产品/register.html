@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册 - 电子产品展示网站</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header>
+        <div class="logo">产品展示网</div>
+        <nav>
+            <ul class="main-menu">
+                <li><a href="index.html">精选产品</a></li>
+                <li><a href="index.html">电子产品</a></li>
+                <li><a href="index.html">家用电器</a></li>
+                <li><a href="index.html">服装</a></li>
+                <li><a href="index.html">关于我们</a></li>
+                <li><a href="login.html">登录</a></li>
+                <li><a href="register.html" class="active">注册</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 注册表单主体 -->
+    <main class="auth-container">
+        <div class="auth-form">
+            <h2>用户注册</h2>
+            <form id="registerForm">
+                <!-- 用户名输入 -->
+                <div class="form-group">
+                    <label for="username">用户名</label>
+                    <input type="text" id="username" name="username" required>
+                    <span class="error-message" id="username-error"></span>
+                </div>
+                
+                <!-- 密码输入 -->
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="error-message" id="password-error"></span>
+                </div>
+                
+                <!-- 确认密码 -->
+                <div class="form-group">
+                    <label for="confirm-password">确认密码</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <span class="error-message" id="confirm-password-error"></span>
+                </div>
+                
+                <!-- 出生日期 -->
+                <div class="form-group">
+                    <label for="birthdate">出生日期</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                    <span class="error-message" id="birthdate-error"></span>
+                </div>
+                
+                <!-- 性别选择 -->
+                <div class="form-group">
+                    <label>性别</label>
+                    <div class="radio-group">
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">男</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">女</label>
+                    </div>
+                    <span class="error-message" id="gender-error"></span>
+                </div>
+                
+                <!-- 手机号码 -->
+                <div class="form-group">
+                    <label for="phone">手机号码</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <span class="error-message" id="phone-error"></span>
+                </div>
+                
+                <!-- 服务条款 -->
+                <div class="form-group terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">我已阅读并同意<a href="#">服务条款</a>和<a href="#">隐私政策</a></label>
+                    <span class="error-message" id="terms-error"></span>
+                </div>
+                
+                <!-- 提交按钮 -->
+                <div class="form-group">
+                    <button type="submit" class="auth-btn">注册</button>
+                </div>
+                
+                <!-- 登录链接 -->
+                <div class="form-links">
+                    <a href="login.html">已有账号? 立即登录</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- 页面底部 -->
+    <footer>
+        <div class="footer-content">
+            <p>学号：2023001 姓名：张三 | Copyright © 2023 产品展示网 all rights reserved</p>
+        </div>
+    </footer>
+
+    <!-- 引入JavaScript文件 -->
+    <script src="js/validation.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

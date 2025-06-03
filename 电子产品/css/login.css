@@ -1,0 +1,135 @@
+/* 登录和注册页面样式 */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px);
+    padding: 40px 20px;
+    background-color: #f8f8f8;
+}
+
+.auth-form {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.auth-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2e8b57;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #2e8b57;
+    outline: none;
+}
+
+/* 单选按钮组样式 */
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.radio-group input[type="radio"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+.radio-group label {
+    display: inline;
+    margin: 0;
+    font-weight: normal;
+}
+
+.error-message {
+    color: #e53935;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+}
+
+.remember-me,
+.terms {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input,
+.terms input {
+    width: auto;
+    margin-right: 10px;
+}
+
+.auth-btn {
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.auth-btn:hover {
+    background-color: #1a6840;
+}
+
+.form-links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form-links a {
+    color: #2e8b57;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.form-links a:hover {
+    color: #1a6840;
+    text-decoration: underline;
+}
+
+/* 输入验证成功的样式 */
+.form-group input.valid {
+    border-color: #4caf50;
+    background-color: rgba(76, 175, 80, 0.05);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .auth-form {
+        padding: 20px;
+    }
+    
+    .radio-group {
+        gap: 10px;
+    }
+}

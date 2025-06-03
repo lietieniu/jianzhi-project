@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 电子产品展示网站</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <header>
+        <div class="logo">产品展示网</div>
+        <nav>
+            <ul class="main-menu">
+                <li><a href="index.html">精选产品</a></li>
+                <li><a href="electronics.html">电子产品</a></li>
+                <li><a href="appliances.html">家用电器</a></li>
+                <li><a href="clothing.html">服装</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="login.html" class="active">登录</a></li>
+                <li><a href="register.html">注册</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-form">
+            <h2>用户登录</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">用户名</label>
+                    <input type="text" id="username" name="username" required>
+                    <span class="error-message" id="username-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="error-message" id="password-error"></span>
+                </div>
+                <div class="form-group remember-me">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">记住我</label>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="auth-btn">登录</button>
+                </div>
+                <div class="form-links">
+                    <a href="#">忘记密码?</a>
+                    <a href="register.html">没有账号? 立即注册</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>学号：2023001 姓名：张三 | Copyright © 2023 产品展示网 all rights reserved</p>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
+<header>
+    <div class="logo">产品展示网</div>
+    <nav>
+        <ul class="main-menu">
+            <li><a href="index.html">精选产品</a></li>
+            <li><a href="index.html">电子产品</a></li>
+            <li><a href="index.html">家用电器</a></li>
+            <li><a href="index.html">服装</a></li>
+            <li><a href="index.html">关于我们</a></li>
+            <li><a href="login.html" class="active">登录</a></li>
+            <li><a href="register.html">注册</a></li>
+        </ul>
+    </nav>
+</header>
