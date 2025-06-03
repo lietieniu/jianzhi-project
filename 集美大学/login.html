@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 集美大学诚毅学院</title>
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* 页面背景和布局 */
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* 渐变背景 */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* 登录容器样式 */
+        .login-container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            padding: 40px;
+        }
+        
+        /* 登录页头部样式 */
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .login-header img {
+            height: 60px;
+            margin-bottom: 15px;
+        }
+        
+        .login-header h1 {
+            color: #003c96;
+            font-size: 24px;
+            font-weight: normal;
+        }
+        
+        /* 登录表单样式 */
+        .login-form {
+            margin-top: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus {
+            border-color: #003c96;
+            outline: none;
+        }
+        
+        /* 登录按钮样式 */
+        .login-button {
+            width: 100%;
+            padding: 12px;
+            background: #003c96;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .login-button:hover {
+            background: #002d70;
+        }
+        
+        /* 登录页脚样式 */
+        .login-footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .login-footer a {
+            color: #003c96;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 登录容器 -->
+    <div class="login-container">
+        <!-- 登录页头部 -->
+        <div class="login-header">
+            <img src="./img/sjlogo.png" alt="集美大学诚毅学院">
+            <h1>用户登录</h1>
+        </div>
+        <!-- 登录表单 -->
+        <div class="login-form">
+            <div class="form-group">
+                <label for="username">用户名</label>
+                <input type="text" id="username" placeholder="请输入用户名" required>
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" id="password" placeholder="请输入密码" required>
+            </div>
+            <button class="login-button" id="loginBtn">登录</button>
+        </div>
+        <!-- 登录页脚 -->
+        <div class="login-footer">
+            <p>忘记密码？请联系 <a href="#">管理员</a></p>
+        </div>
+    </div>
+
+    <!-- 登录脚本 -->
+    <script>
+        // 登录按钮点击事件
+        document.getElementById('loginBtn').addEventListener('click', function() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // 简单的表单验证
+            if(username && password) {
+                // 实际应用中应该进行后端验证
+                // 这里简单演示，输入任何用户名和密码都能登录
+                window.location.href = 'index.html';
+            } else {
+                alert('请输入用户名和密码');
+            }
+        });
+        
+        // 添加回车键登录功能
+        document.getElementById('password').addEventListener('keypress', function(e) {
+            if(e.key === 'Enter') {
+                document.getElementById('loginBtn').click();
+            }
+        });
+    </script>
+</body>
+</html>
