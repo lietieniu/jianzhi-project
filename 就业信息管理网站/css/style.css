@@ -40,7 +40,7 @@ img {
 /* 按钮样式 */
 .btn {
     display: inline-block;
-    padding: 8px 16px;
+    padding: 12px 24px;
     border-radius: 4px;
     font-size: 14px;
     font-weight: 600;

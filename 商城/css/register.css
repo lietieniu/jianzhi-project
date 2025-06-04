@@ -1,0 +1,199 @@
+/* 注册页面样式 */
+.register-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+.register-box {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 20px;
+}
+
+.register-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.register-header h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.register-header p {
+    color: #666;
+    font-size: 14px;
+}
+
+.register-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.required {
+    color: #dc3545;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e1e5e9;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ff6b35;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.form-group input.error {
+    border-color: #dc3545;
+}
+
+.form-group input.success {
+    border-color: #28a745;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+.success-message {
+    color: #28a745;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ddd;
+    border-radius: 3px;
+    margin-right: 8px;
+    margin-top: 2px;
+    position: relative;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark {
+    background-color: #ff6b35;
+    border-color: #ff6b35;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.terms-link, .privacy-link {
+    color: #ff6b35;
+    transition: color 0.3s ease;
+}
+
+.terms-link:hover, .privacy-link:hover {
+    color: #e55a2b;
+}
+
+.btn-register-submit {
+    width: 100%;
+    background-color: #ff6b35;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.btn-register-submit:hover {
+    background-color: #e55a2b;
+}
+
+.btn-register-submit:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.login-link {
+    text-align: center;
+}
+
+.login-link p {
+    color: #666;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #ff6b35;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: #e55a2b;
+}
+
+.back-to-home {
+    text-align: center;
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+    .register-box {
+        padding: 30px 20px;
+    }
+    
+    .register-header h2 {
+        font-size: 24px;
+    }
+}
