@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单轮播图</title>
+    <style>
+        .carousel-container {
+            width: 600px;
+            height: 300px;
+            margin: 50px auto;
+            position: relative;
+            border: 2px solid #ccc;
+            overflow: hidden;
+        }
+        
+        .carousel-images {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .carousel-item {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .carousel-item.active {
+            opacity: 1;
+        }
+        
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .carousel-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .control-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        
+        .control-btn.active {
+            background-color: #fff;
+        }
+        
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        .prev-btn {
+            left: 10px;
+        }
+        
+        .next-btn {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel-container">
+        <div class="carousel-images">
+            <div class="carousel-item active">
+                <img src="https://via.placeholder.com/600x300/ff6b6b/ffffff?text=图片1" alt="图片1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/600x300/4ecdc4/ffffff?text=图片2" alt="图片2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/600x300/45b7d1/ffffff?text=图片3" alt="图片3">
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/600x300/f9ca24/ffffff?text=图片4" alt="图片4">
+            </div>
+        </div>
+        
+        <button class="nav-btn prev-btn" onclick="changeSlide(-1)">❮</button>
+        <button class="nav-btn next-btn" onclick="changeSlide(1)">❯</button>
+        
+        <div class="carousel-controls">
+            <button class="control-btn active" onclick="goToSlide(0)"></button>
+            <button class="control-btn" onclick="goToSlide(1)"></button>
+            <button class="control-btn" onclick="goToSlide(2)"></button>
+            <button class="control-btn" onclick="goToSlide(3)"></button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

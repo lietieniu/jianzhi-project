@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小兔生鲜电梯导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background-color: #27ba9b;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+        
+        .main-content {
+            margin-top: 80px;
+            padding: 20px;
+        }
+        
+        .section {
+            min-height: 600px;
+            padding: 40px 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .fruits { background-color: #fff2e6; }
+        .vegetables { background-color: #e6f7e6; }
+        .meat { background-color: #ffe6e6; }
+        .seafood { background-color: #e6f3ff; }
+        .dairy { background-color: #f0e6ff; }
+        .snacks { background-color: #fff0f5; }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .product-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .elevator-nav {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            overflow: hidden;
+            z-index: 1000;
+        }
+        
+        .nav-item {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            min-width: 80px;
+        }
+        
+        .nav-item:last-child {
+            border-bottom: none;
+        }
+        
+        .nav-item:hover {
+            background-color: #27ba9b;
+            color: white;
+        }
+        
+        .nav-item.active {
+            background-color: #27ba9b;
+            color: white;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #27ba9b;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: none;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top:hover {
+            background-color: #1e9b7e;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>🐰 小兔生鲜 - 新鲜每一天</h1>
+    </header>
+    
+    <main class="main-content">
+        <section id="fruits" class="section fruits">
+            <h2>🍎 新鲜水果</h2>
+            <div class="section-content">
+                <p>精选优质水果，新鲜直达</p>
+                <div class="product-grid">
+                    <div class="product-item">苹果</div>
+                    <div class="product-item">香蕉</div>
+                    <div class="product-item">橙子</div>
+                    <div class="product-item">草莓</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="vegetables" class="section vegetables">
+            <h2>🥬 新鲜蔬菜</h2>
+            <div class="section-content">
+                <p>绿色有机蔬菜，健康生活首选</p>
+                <div class="product-grid">
+                    <div class="product-item">白菜</div>
+                    <div class="product-item">萝卜</div>
+                    <div class="product-item">西红柿</div>
+                    <div class="product-item">黄瓜</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="meat" class="section meat">
+            <h2>🥩 优质肉类</h2>
+            <div class="section-content">
+                <p>新鲜肉类，品质保证</p>
+                <div class="product-grid">
+                    <div class="product-item">猪肉</div>
+                    <div class="product-item">牛肉</div>
+                    <div class="product-item">鸡肉</div>
+                    <div class="product-item">羊肉</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="seafood" class="section seafood">
+            <h2>🐟 海鲜水产</h2>
+            <div class="section-content">
+                <p>新鲜海鲜，营养丰富</p>
+                <div class="product-grid">
+                    <div class="product-item">鲤鱼</div>
+                    <div class="product-item">虾</div>
+                    <div class="product-item">螃蟹</div>
+                    <div class="product-item">带鱼</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="dairy" class="section dairy">
+            <h2>🥛 乳制品</h2>
+            <div class="section-content">
+                <p>新鲜乳制品，营养健康</p>
+                <div class="product-grid">
+                    <div class="product-item">牛奶</div>
+                    <div class="product-item">酸奶</div>
+                    <div class="product-item">奶酪</div>
+                    <div class="product-item">黄油</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="snacks" class="section snacks">
+            <h2>🍪 休闲零食</h2>
+            <div class="section-content">
+                <p>精选零食，美味享受</p>
+                <div class="product-grid">
+                    <div class="product-item">饼干</div>
+                    <div class="product-item">薯片</div>
+                    <div class="product-item">坚果</div>
+                    <div class="product-item">糖果</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <nav class="elevator-nav" id="elevatorNav">
+        <a href="#fruits" class="nav-item" data-target="fruits">水果</a>
+        <a href="#vegetables" class="nav-item" data-target="vegetables">蔬菜</a>
+        <a href="#meat" class="nav-item" data-target="meat">肉类</a>
+        <a href="#seafood" class="nav-item" data-target="seafood">海鲜</a>
+        <a href="#dairy" class="nav-item" data-target="dairy">乳制品</a>
+        <a href="#snacks" class="nav-item" data-target="snacks">零食</a>
+    </nav>
+    
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
+    
+    <script src="script.js"></script>
+</body>
+</html>

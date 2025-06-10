@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简约电梯导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .section {
+            height: 500px;
+            text-align: center;
+            line-height: 500px;
+            font-size: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        #section1 { background: #ffffff; }
+        #section2 { background: #f8f8f8; }
+        #section3 { background: #f0f0f0; }
+        #section4 { background: #e8e8e8; }
+        
+        .nav {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .nav-item {
+            display: block;
+            width: 40px;
+            height: 40px;
+            margin: 10px 0;
+            background: #fff;
+            border: 2px solid #333;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+        }
+        
+        .nav-item.active {
+            background: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="section1" class="section">首页</div>
+    <div id="section2" class="section">关于</div>
+    <div id="section3" class="section">服务</div>
+    <div id="section4" class="section">联系</div>
+    
+    <nav class="nav">
+        <a href="#section1" class="nav-item active">1</a>
+        <a href="#section2" class="nav-item">2</a>
+        <a href="#section3" class="nav-item">3</a>
+        <a href="#section4" class="nav-item">4</a>
+    </nav>
+    
+    <script src="script.js"></script>
+</body>
+</html>
