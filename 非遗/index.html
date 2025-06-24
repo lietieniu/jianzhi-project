@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>非遗</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>中华非遗</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">首页</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">非遗项目</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/beijing.html">北京非遗</a></li>
+                        <li><a href="pages/jiangsu.html">江苏非遗</a></li>
+                        <li><a href="pages/sichuan.html">四川非遗</a></li>
+                        <li><a href="pages/guangdong.html">广东非遗</a></li>
+                    </ul>
+                </li>
+                <li><a href="pages/about.html" class="nav-link">关于我们</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 轮播图区域 -->
+    <section class="carousel-section">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <img src="img/1.jpg" alt="非遗文化1">
+                <div class="carousel-content">
+                    <h1>传承千年文化</h1>
+                    <p>探索中华非物质文化遗产的魅力</p>
+                    <button class="btn-primary">了解更多</button>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="img/2.jpg" alt="非遗文化2">
+                <div class="carousel-content">
+                    <h1>匠心传承</h1>
+                    <p>感受传统工艺的精湛技艺</p>
+                    <button class="btn-primary">探索项目</button>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="img/3.jpg" alt="非遗文化3">
+                <div class="carousel-content">
+                    <h1>文化瑰宝</h1>
+                    <p>保护和传承珍贵的文化遗产</p>
+                    <button class="btn-primary">参与保护</button>
+                </div>
+            </div>
+            <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
+            <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
+            <div class="carousel-indicators">
+                <span class="indicator active" onclick="currentSlide(1)"></span>
+                <span class="indicator" onclick="currentSlide(2)"></span>
+                <span class="indicator" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特色项目展示 -->
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title">特色非遗项目</h2>
+            <div class="featured-grid">
+                <div class="featured-item fade-in">
+                    <img src="img/4.jpg" alt="京剧">
+                    <div class="featured-content">
+                        <h3>京剧</h3>
+                        <p>中国传统戏曲艺术的瑰宝</p>
+                        <a href="pages/beijing.html" class="btn-secondary">了解详情</a>
+                    </div>
+                </div>
+                <div class="featured-item fade-in">
+                    <img src="img/5.jpg" alt="苏绣">
+                    <div class="featured-content">
+                        <h3>苏绣</h3>
+                        <p>江南刺绣艺术的代表</p>
+                        <a href="pages/jiangsu.html" class="btn-secondary">了解详情</a>
+                    </div>
+                </div>
+                <div class="featured-item fade-in">
+                    <img src="img/6.jpg" alt="川剧变脸">
+                    <div class="featured-content">
+                        <h3>川剧变脸</h3>
+                        <p>神秘莫测的传统技艺</p>
+                        <a href="pages/sichuan.html" class="btn-secondary">了解详情</a>
+                    </div>
+                </div>
+                <div class="featured-item fade-in">
+                    <img src="img/7.jpg" alt="粤剧">
+                    <div class="featured-content">
+                        <h3>粤剧</h3>
+                        <p>岭南文化的艺术精华</p>
+                        <a href="pages/guangdong.html" class="btn-secondary">了解详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 统计数据 -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="1372">0</div>
+                    <div class="stat-label">国家级项目</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="3068">0</div>
+                    <div class="stat-label">传承人</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="34">0</div>
+                    <div class="stat-label">省份覆盖</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="5000">0</div>
+                    <div class="stat-label">年历史</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>中华非遗</h3>
+                    <p>传承文化，保护遗产，让非物质文化遗产在新时代焕发新的生机。</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="pages/beijing.html">北京非遗</a></li>
+                        <li><a href="pages/jiangsu.html">江苏非遗</a></li>
+                        <li><a href="pages/about.html">关于我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>联系我们</h4>
+                    <p>邮箱: info@zhonghuafeiyei.com</p>
+                    <p>电话: 400-123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 中华非遗文化网. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

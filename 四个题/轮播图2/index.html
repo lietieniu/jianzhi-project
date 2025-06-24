@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图2</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        
+        .slider {
+            width: 500px;
+            height: 250px;
+            margin: 30px auto;
+            border: 3px solid #333;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .slider-wrapper {
+            width: 400%;
+            height: 100%;
+            display: flex;
+            transition: transform 0.4s ease;
+        }
+        
+        .slide {
+            width: 25%;
+            height: 100%;
+            flex-shrink: 0;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        
+        .dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 3px;
+            cursor: pointer;
+        }
+        
+        .dot.current {
+            background: #fff;
+        }
+        
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            border: none;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .left {
+            left: 5px;
+        }
+        
+        .right {
+            right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slider-wrapper">
+            <div class="slide">
+                <img src="https://via.placeholder.com/500x250/e74c3c/ffffff?text=第一张" alt="第一张">
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/500x250/3498db/ffffff?text=第二张" alt="第二张">
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/500x250/2ecc71/ffffff?text=第三张" alt="第三张">
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/500x250/f39c12/ffffff?text=第四张" alt="第四张">
+            </div>
+        </div>
+        
+        <button class="arrow left">‹</button>
+        <button class="arrow right">›</button>
+        
+        <div class="dots">
+            <span class="dot current" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

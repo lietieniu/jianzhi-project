@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易搜索框</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            padding: 30px;
+            background: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+        
+        .search-box {
+            width: 300px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 8px 40px 8px 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            outline: none;
+        }
+        
+        .search-input:focus {
+            border-color: #ff6700;
+        }
+        
+        .search-btn {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 40px;
+            background: #ff6700;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .search-list {
+            width: 100%;
+            background: white;
+            border: 1px solid #ddd;
+            border-top: none;
+            position: absolute;
+            display: none;
+            z-index: 10;
+        }
+        
+        .search-item {
+            padding: 8px 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .search-item:hover {
+            background: #f9f9f9;
+        }
+        
+        .hot-search {
+            margin-top: 20px;
+        }
+        
+        .hot-search h3 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .hot-tag {
+            display: inline-block;
+            padding: 5px 10px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            margin: 0 5px 5px 0;
+            font-size: 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-box">
+        <input type="text" class="search-input" placeholder="请输入搜索内容">
+        <button class="search-btn">搜</button>
+        
+        <div class="search-list"></div>
+        
+        <div class="hot-search">
+            <h3>热门搜索</h3>
+            <div class="hot-tags">
+                <span class="hot-tag">手机</span>
+                <span class="hot-tag">电视</span>
+                <span class="hot-tag">笔记本</span>
+                <span class="hot-tag">平板</span>
+                <span class="hot-tag">耳机</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

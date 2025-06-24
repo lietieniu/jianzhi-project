@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单电梯导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .section {
+            height: 500px;
+            text-align: center;
+            line-height: 500px;
+            font-size: 30px;
+        }
+        
+        #section1 { background: #FFE1E1; }
+        #section2 { background: #E1FFE1; }
+        #section3 { background: #E1E1FF; }
+        #section4 { background: #FFE1FF; }
+        
+        .elevator {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .elevator a {
+            display: block;
+            width: 60px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            margin: 5px 0;
+            background: #fff;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .elevator a.active {
+            background: #ff6b6b;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="section1" class="section">第一层</div>
+    <div id="section2" class="section">第二层</div>
+    <div id="section3" class="section">第三层</div>
+    <div id="section4" class="section">第四层</div>
+    
+    <div class="elevator">
+        <a href="#section1" class="active">1F</a>
+        <a href="#section2">2F</a>
+        <a href="#section3">3F</a>
+        <a href="#section4">4F</a>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

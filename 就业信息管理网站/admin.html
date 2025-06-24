@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后台管理 - 学生就业信息管理系统</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="./img/logo.png" alt="就业信息管理系统Logo">
+                <h1>学生就业信息管理系统</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="job-info.html">就业信息</a></li>
+                    <li><a href="admin.html" class="active">后台管理</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>后台管理</h1>
+            <p>管理就业信息和系统日志</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="admin-panel">
+            <div class="admin-sidebar">
+                <ul class="admin-menu">
+                    <li class="active" data-tab="job-management">就业信息管理</li>
+                    <li data-tab="log-management">系统日志</li>
+                    <li data-tab="user-management">用户管理</li>
+                    <li data-tab="system-settings">系统设置</li>
+                </ul>
+            </div>
+
+            <div class="admin-content">
+                <div class="admin-tab active" id="job-management">
+                    <h2>就业信息管理</h2>
+                    <div class="action-buttons">
+                        <button id="add-job-btn" class="btn btn-primary">添加就业信息</button>
+                        <button id="batch-delete-btn" class="btn btn-danger">批量删除</button>
+                    </div>
+
+                    <div class="job-form-container" style="display: none;">
+                        <h3>添加/编辑就业信息</h3>
+                        <form id="job-form" class="admin-form">
+                            <div class="form-group">
+                                <label for="job-title">职位名称 <span class="required">*</span></label>
+                                <input type="text" id="job-title" name="job-title" required minlength="2" maxlength="50">
+                                <div class="error-message"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="company-name">公司名称 <span class="required">*</span></label>
+                                <input type="text" id="company-name" name="company-name" required minlength="2" maxlength="50">
+                                <div class="error-message"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="job-location">工作地点 <span class="required">*</span></label>
+                                    <input type="text" id="job-location" name="job-location" required>
+                                    <div class="error-message"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="job-salary">薪资范围 <span class="required">*</span></label>
+                                    <input type="text" id="job-salary" name="job-salary" required placeholder="例如：10k-15k">
+                                    <div class="error-message"></div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="job-type">工作类型 <span class="required">*</span></label>
+                                    <select id="job-type" name="job-type" required>
+                                        <option value="">请选择</option>
+                                        <option value="fulltime">全职</option>
+                                        <option value="parttime">兼职</option>
+                                        <option value="intern">实习</option>
+                                    </select>
+                                    <div class="error-message"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="job-industry">所属行业 <span class="required">*</span></label>
+                                    <select id="job-industry" name="job-industry" required>
+                                        <option value="">请选择</option>
+                                        <option value="it">IT/互联网</option>
+                                        <option value="finance">金融/银行</option>
+                                        <option value="education">教育/培训</option>
+                                        <option value="manufacturing">制造业</option>
+                                        <option value="service">服务业</option>
+                                    </select>
+                                    <div class="error-message"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="job-description">职位描述 <span class="required">*</span></label>
+                                <textarea id="job-description" name="job-description" rows="4" required minlength="10" maxlength="500"></textarea>
+                                <div class="error-message"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="job-requirements">职位要求 <span class="required">*</span></label>
+                                <textarea id="job-requirements" name="job-requirements" rows="4" required minlength="10" maxlength="500"></textarea>
+                                <div class="error-message"></div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">保存</button>
+                                <button type="button" class="btn btn-secondary" id="cancel-job-form">取消</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="job-table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" id="select-all"></th>
+                                    <th>ID</th>
+                                    <th>职位名称</th>
+                                    <th>公司名称</th>
+                                    <th>工作地点</th>
+                                    <th>薪资范围</th>
+                                    <th>发布日期</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox" class="job-select"></td>
+                                    <td>1</td>
+                                    <td>前端开发工程师</td>
+                                    <td>腾讯科技</td>
+                                    <td>深圳</td>
+                                    <td>15k-25k</td>
+                                    <td>2023-06-15</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-edit">编辑</button>
+                                        <button class="btn btn-sm btn-delete">删除</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="job-select"></td>
+                                    <td>2</td>
+                                    <td>Java后端开发工程师</td>
+                                    <td>阿里巴巴</td>
+                                    <td>杭州</td>
+                                    <td>20k-35k</td>
+                                    <td>2023-06-10</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-edit">编辑</button>
+                                        <button class="btn btn-sm btn-delete">删除</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="job-select"></td>
+                                    <td>3</td>
+                                    <td>数据分析师</td>
+                                    <td>字节跳动</td>
+                                    <td>北京</td>
+                                    <td>15k-25k</td>
+                                    <td>2023-06-08</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-edit">编辑</button>
+                                        <button class="btn btn-sm btn-delete">删除</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="job-select"></td>
+                                    <td>4</td>
+                                    <td>产品经理</td>
+                                    <td>百度</td>
+                                    <td>北京</td>
+                                    <td>18k-30k</td>
+                                    <td>2023-06-05</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-edit">编辑</button>
+                                        <button class="btn btn-sm btn-delete">删除</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="job-select"></td>
+                                    <td>5</td>
+                                    <td>人力资源专员</td>
+                                    <td>京东</td>
+                                    <td>北京</td>
+                                    <td>8k-15k</td>
+                                    <td>2023-06-01</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-edit">编辑</button>
+                                        <button class="btn btn-sm btn-delete">删除</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="admin-tab" id="log-management">
+                    <h2>系统日志</h2>
+                    <div class="log-filter">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="log-date-start">开始日期</label>
+                                <input type="date" id="log-date-start">
+                            </div>
+                            <div class="form-group">
+                                <label for="log-date-end">结束日期</label>
+                                <input type="date" id="log-date-end">
+                            </div>
+                            <div class="form-group">
+                                <label for="log-type">日志类型</label>
+                                <select id="log-type">
+                                    <option value="">全部</option>
+                                    <option value="info">信息</option>
+                                    <option value="warning">警告</option>
+                                    <option value="error">错误</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary" id="filter-log-btn">筛选</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="log-table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>时间</th>
+                                    <th>用户</th>
+                                    <th>操作</th>
+                                    <th>类型</th>
+                                    <th>详情</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2023-06-15 10:30:45</td>
+                                    <td>admin</td>
+                                    <td>添加就业信息</td>
+                                    <td><span class="log-type info">信息</span></td>
+                                    <td>添加了新的就业信息：前端开发工程师 - 腾讯科技</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>2023-06-15 10:25:12</td>
+                                    <td>admin</td>
+                                    <td>登录系统</td>
+                                    <td><span class="log-type info">信息</span></td>
+                                    <td>管理员登录系统</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>2023-06-14 16:45:30</td>
+                                    <td>admin</td>
+                                    <td>修改就业信息</td>
+                                    <td><span class="log-type info">信息</span></td>
+                                    <td>修改了就业信息：Java后端开发工程师 - 阿里巴巴</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>2023-06-14 15:20:18</td>
+                                    <td>user1</td>
+                                    <td>登录失败</td>
+                                    <td><span class="log-type warning">警告</span></td>
+                                    <td>用户名或密码错误</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>2023-06-13 09:15:22</td>
+                                    <td>admin</td>
+                                    <td>删除就业信息</td>
+                                    <td><span class="log-type warning">警告</span></td>
+                                    <td>删除了就业信息：UI设计师 - 网易</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>2023-06-12 14:30:45</td>
+                                    <td>system</td>
+                                    <td>系统错误</td>
+                                    <td><span class="log-type error">错误</span></td>
+                                    <td>数据库连接失败，错误代码：500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="admin-tab" id="user-management">
+                    <h2>用户管理</h2>
+                    <p>此功能正在开发中...</p>
+                </div>
+
+                <div class="admin-tab" id="system-settings">
+                    <h2>系统设置</h2>
+                    <p>此功能正在开发中...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于我们</h3>
+                    <p>学生就业信息管理系统致力于为学生提供全面的就业服务和信息支持，帮助学生实现理想就业。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>联系方式</h3>
+                    <p>电话：123-456-7890</p>
+                    <p>邮箱：career@example.edu.cn</p>
+                    <p>地址：某某市某某区某某路123号</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 学生就业信息管理系统 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/validation.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

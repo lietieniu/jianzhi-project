@@ -1,0 +1,614 @@
+/* 全局样式 - 重置浏览器默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft YaHei", sans-serif; /* 使用微软雅黑字体 */
+    line-height: 1.5; /* 设置行高 */
+}
+
+.container {
+    max-width: 1200px; /* 设置最大宽度 */
+    margin: 0 auto; /* 水平居中 */
+    padding: 0 15px; /* 左右内边距 */
+}
+
+/* 头部样式 */
+.header {
+    background: #003c96; /* 深蓝色背景 */
+}
+
+.header-top {
+    padding: 10px 0; /* 上下内边距 */
+}
+
+.header-top .container {
+    display: flex;
+    justify-content: space-between; /* 两端对齐 */
+    align-items: center; /* 垂直居中 */
+}
+
+.logo img {
+    height: 50px; /* 设置logo高度 */
+}
+
+.top-right {
+    display: flex;
+    gap: 20px; /* 元素间距 */
+    align-items: center; /* 垂直居中 */
+}
+
+.top-right a {
+    color: #fff; /* 白色文字 */
+    text-decoration: none; /* 移除下划线 */
+    font-size: 14px; /* 字体大小 */
+}
+
+/* 导航菜单样式 */
+.main-nav {
+    background: #003c96; /* 深蓝色背景 */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* 顶部边框 */
+    position: relative;
+    z-index: 100; /* 确保导航在其他元素上方 */
+}
+
+.nav-list {
+    list-style: none; /* 移除列表样式 */
+    display: flex;
+    justify-content: space-between; /* 均匀分布 */
+    padding: 0;
+}
+
+.nav-list li {
+    position: relative; /* 为子菜单定位做准备 */
+}
+
+.nav-list li a {
+    color: #fff; /* 白色文字 */
+    text-decoration: none; /* 移除下划线 */
+    padding: 15px 20px; /* 内边距 */
+    display: block;
+    font-size: 16px; /* 字体大小 */
+    transition: background-color 0.3s; /* 平滑过渡效果 */
+}
+
+.nav-list li a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* 悬停时背景变亮 */
+}
+
+/* 二级菜单样式 */
+.submenu {
+    position: absolute;
+    top: 100%; /* 位于父元素下方 */
+    left: 0;
+    width: 160px;
+    background-color: #004db3; /* 稍浅的蓝色背景 */
+    list-style: none;
+    padding: 0;
+    opacity: 0; /* 初始隐藏 */
+    visibility: hidden;
+    transform: translateY(10px); /* 初始向下偏移 */
+    transition: all 0.3s ease; /* 平滑过渡 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+}
+
+.nav-list li:hover .submenu {
+    opacity: 1; /* 悬停时显示 */
+    visibility: visible;
+    transform: translateY(0); /* 恢复位置 */
+}
+
+.submenu li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* 底部边框 */
+}
+
+.submenu li:last-child {
+    border-bottom: none; /* 最后一项移除边框 */
+}
+
+.submenu li a {
+    padding: 12px 15px;
+    font-size: 14px;
+    display: block;
+}
+
+.submenu li a:hover {
+    background-color: #0057cc; /* 悬停时背景色变化 */
+}
+
+/* 轮播图样式 */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+}
+
+.slide-text h2 {
+    font-size: 24px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* 轮播图按钮 */
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 2;
+}
+
+.slider-button.prev {
+    left: 10px;
+}
+
+.slider-button.next {
+    right: 10px;
+}
+
+/* 轮播图指示点 */
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #fff;
+}
+
+/* 学院要闻部分 */
+.news-section {
+    margin: 30px 0;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.section-title {
+    color: #003c96;
+    font-size: 20px;
+    margin: 0;
+    position: relative;
+    padding-left: 15px;
+}
+
+.section-title:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 20px;
+    background: #003c96;
+}
+
+.more-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.news-content {
+    display: flex;
+    padding: 20px;
+}
+
+.news-slider-container {
+    width: 40%;
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+}
+
+.news-slider {
+    width: 100%;
+    height: 100%;
+}
+
+.news-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.news-slide.active {
+    opacity: 1;
+}
+
+.news-slide img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-title {
+    padding: 10px 0;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news-slider-dots {
+    position: absolute;
+    bottom: 50px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+    z-index: 2;
+}
+
+.news-dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.news-dot.active {
+    background: #003c96;
+}
+
+.news-list {
+    width: 60%;
+    padding-left: 20px;
+}
+
+.news-list ul {
+    list-style: none;
+}
+
+.news-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    align-items: center;
+}
+
+.news-list li:last-child {
+    border-bottom: none;
+}
+
+.news-date {
+    color: #999;
+    font-size: 12px;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.news-list a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+}
+
+.news-list a:hover {
+    color: #003c96;
+}
+
+/* 系部动态、讲座信息、通知公告部分 */
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+    gap: 20px;
+}
+
+.info-column {
+    flex: 1;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.info-content {
+    padding: 15px 20px;
+}
+
+.info-list {
+    list-style: none;
+}
+
+.info-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    align-items: center;
+}
+
+.info-list li:last-child {
+    border-bottom: none;
+}
+
+.info-date {
+    color: #999;
+    font-size: 12px;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.info-list a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+}
+
+.info-list a:hover {
+    color: #003c96;
+}
+
+/* 专题专栏部分 */
+.special-section {
+    margin: 30px 0;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.special-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.special-content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+.special-item {
+    width: calc(25% - 15px);
+    overflow: hidden;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.special-item:hover {
+    transform: translateY(-5px);
+}
+
+.special-item a {
+    display: block;
+    text-decoration: none;
+}
+
+.special-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.special-title {
+    padding: 10px 0;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 在style.css文件末尾添加以下样式 */
+
+/* 快速入口部分 - 优化后的样式 */
+.quick-section {
+    margin: 30px 0;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.quick-header {
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee; /* 底部边框 */
+}
+
+.quick-subtitle {
+    color: #999; /* 灰色文字 */
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.quick-content {
+    padding: 20px;
+}
+
+.quick-row {
+    display: flex;
+    justify-content: space-between; /* 均匀分布 */
+    margin-bottom: 20px;
+}
+
+.quick-row:last-child {
+    margin-bottom: 0; /* 最后一行移除底部边距 */
+}
+
+/* 快速入口链接样式 - 添加蓝色背景悬停效果 */
+.quick-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平居中 */
+    text-decoration: none;
+    width: 16.666%; /* 每行6个项目 */
+    padding: 10px; /* 添加内边距 */
+    border-radius: 8px; /* 圆角边框 */
+    transition: all 0.3s ease; /* 平滑过渡效果 */
+}
+
+/* 悬停效果 */
+.quick-link:hover {
+    background-color: #3780ee; /* 浅蓝色背景 */
+    transform: translateY(-5px); /* 向上移动效果 */
+    box-shadow: 0 5px 15px rgba(0, 60, 150, 0.1); /* 添加阴影 */
+}
+
+.quick-link img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    transition: transform 0.3s; /* 图标过渡效果 */
+}
+
+/* 图标放大效果 */
+.quick-link:hover img {
+    transform: scale(1.1); /* 悬停时图标放大 */
+}
+
+.quick-link span {
+    color: #333;
+    font-size: 14px;
+    transition: color 0.3s; /* 文字颜色过渡效果 */
+}
+
+/* 文字颜色变化 */
+.quick-link:hover span {
+    color: #003c96; /* 悬停时文字变为蓝色 */
+}
+
+/* 页脚样式 */
+.footer {
+    background: #003c96;
+    color: #fff;
+    padding: 30px 0;
+    margin-top: 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-info {
+    flex: 1;
+}
+
+.footer-info p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.footer-qrcode {
+    text-align: center;
+}
+
+.footer-qrcode img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+}
+
+.footer-qrcode p {
+    font-size: 14px;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 12px;
+}

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电子产品展示网站</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        window.onload = function(){
+            alert("欢迎你来到电子产品展示网站！");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">产品展示网</div>
+        <nav>
+            <ul class="main-menu">
+                <li><a href="index.html">精选产品</a>
+                    <ul class="sub-menu">
+                        <li><a href="#daily">日用百货</a></li>
+                        <li><a href="#fashion">精选女装</a></li>
+                        <li><a href="#tech">时尚科技</a></li>
+                        <li><a href="#smart">智能家电</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html">电子产品</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">手机</a></li>
+                        <li><a href="#">电脑</a></li>
+                        <li><a href="#">平板</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html">家用电器</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">空调</a></li>
+                        <li><a href="#">冰箱</a></li>
+                        <li><a href="#">电视</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html">服装</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">男装</a></li>
+                        <li><a href="#">女装</a></li>
+                        <li><a href="#">童装</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html">关于我们</a></li>
+                <li><a href="login.html">登录</a></li>
+                <li><a href="register.html">注册</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <div class="carousel-container">
+            <div class="carousel-slides">
+                <div class="slide active">
+                    <img src="img/banner/banner1.jpg" alt="夏日特惠">
+                    <div class="slide-content">
+                        <h2>夏日劲爆，清凉一夏</h2>
+                        <p>特价区 19.9 起</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="img/banner/banner2.jpg" alt="电子产品">
+                    <div class="slide-content">
+                        <h2>数码新品</h2>
+                        <p>最新科技，尽在掌握</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="img/banner/banner3.jpg" alt="家电促销">
+                    <div class="slide-content">
+                        <h2>家电大促</h2>
+                        <p>品质生活，从这里开始</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-indicators">
+                <span class="indicator active" data-index="0"></span>
+                <span class="indicator" data-index="1"></span>
+                <span class="indicator" data-index="2"></span>
+            </div>
+            <button class="carousel-prev">&#10094;</button>
+            <button class="carousel-next">&#10095;</button>
+        </div>
+    </section>
+
+    <main>
+        <section class="welcome">
+            <h2>欢迎选购我们的优质产品</h2>
+        </section>
+
+        <section class="hot-products" id="daily">
+            <div class="section-header">
+                <h2>日用百货热销，超值必抢</h2>
+            </div>
+            <!-- 删除了category-menu部分，内容直接滚动展示 -->
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="img/products/空调.jpg" alt="空调">
+                    <div class="product-info">
+                        <h3>智能变频空调</h3>
+                        <p class="price">¥2499</p>
+                        <button class="buy-btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="img/products/风扇.jpg" alt="风扇">
+                    <div class="product-info">
+                        <h3>智能电风扇</h3>
+                        <p class="price">¥299</p>
+                        <button class="buy-btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="img/products/连衣裙.jpg" alt="连衣裙">
+                    <div class="product-info">
+                        <h3>夏季连衣裙</h3>
+                        <p class="price">¥199</p>
+                        <button class="buy-btn">立即购买</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hot-products" id="fashion">
+            <div class="section-header">
+                <h2>精选女装</h2>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="img/products/连衣裙.jpg" alt="连衣裙">
+                    <div class="product-info">
+                        <h3>夏季连衣裙</h3>
+                        <p class="price">¥199</p>
+                        <button class="buy-btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="img/products/T恤.jpg" alt="连衣裙">
+                    <div class="product-info">
+                        <h3>时尚T恤</h3>
+                        <p class="price">¥99</p>
+                        <button class="buy-btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="img/products/牛仔裤.jpg" alt="连衣裙">
+                    <div class="product-info">
+                        <h3>牛仔裤</h3>
+                        <p class="price">¥159</p>
+                        <button class="buy-btn">立即购买</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hot-products" id="tech">
+            <div class="section-header">
+                <h2>时尚科技</h2>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="img/products/手机.jpg" alt="手机">
+                    <div class="product-info">
+                        <h3>智能手机</h3>
+                        <p class="price">¥2999</p>
+                        <button class="buy-btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="img/products/电视.jpg" alt="电视">
+                    <div class="product-info">
+                        <h3>4K智能电视</h3>
+                        <p class="price">¥3999</p>
+                        <button class="buy-btn">立即购买</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section class="hot-products" id="smart">
+            <div class="section-header">
+                <h2>智能家电</h2>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="img/products/ac2.jpg" alt="空调">
+                    <div class="product-info">
+                        <h3>智能变频空调</h3>
+                        <p class="price">¥2499</p>
+                        <button class="buy-btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="img/products/fan2.jpg" alt="风扇">
+                    <div class="product-info">
+                        <h3>智能电风扇</h3>
+                        <p class="price">¥299</p>
+                        <button class="buy-btn">立即购买</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="digital-products">
+            <div class="section-header">
+                <h2>数码电子</h2>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="img/products/tv2.jpg" alt="电视">
+                    <div class="product-info">
+                        <h3>4K智能电视</h3>
+                        <p class="price">¥3999</p>
+                        <button class="buy-btn">立即购买</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="img/products/phone2.jpg" alt="手机">
+                    <div class="product-info">
+                        <h3>智能手机</h3>
+                        <p class="price">¥2999</p>
+                        <button class="buy-btn">立即购买</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="brand-showcase">
+            <div class="section-header">
+                <h2>品牌专区</h2>
+            </div>
+            <div class="brand-grid">
+                <div class="brand-card">
+                    <img src="img/brands/xiaomi2.jpg" alt="小米">
+                    <div class="brand-info">
+                        <h3>小米专区</h3>
+                        <p>4.6折起</p>
+                        <button class="buy-btn">立即抢购</button>
+                    </div>
+                </div>
+                <div class="brand-card">
+                    <img src="img/brands/oppo2.jpg" alt="OPPO">
+                    <div class="brand-info">
+                        <h3>OPPO数码电子专区</h3>
+                        <p>6折起</p>
+                        <button class="buy-btn">立即抢购</button>
+                    </div>
+                </div>
+                <div class="brand-card">
+                    <img src="img/brands/hp2.jpg" alt="惠普">
+                    <div class="brand-info">
+                        <h3>惠普数码电子专区</h3>
+                        <p>3.5折起</p>
+                        <button class="buy-btn">立即抢购</button>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>学号：2024110517 姓名：曾奕晗</p>
+        </div>
+    </footer>
+
+    <script src="js/carousel.js"></script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生就业信息管理系统</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 网站头部导航 -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="./img/logo.png" alt="就业信息管理系统Logo">
+                <h1>学生就业信息管理系统</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">首页</a></li>
+                    <li><a href="job-info.html">就业信息</a></li>
+                    <li><a href="admin.html">后台管理</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 轮播图横幅区域 -->
+    <section class="banner">
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="slide active">
+                    <img src="./img/l1.jpg" alt="就业展示图1">
+                </div>
+                <div class="slide">
+                    <img src="./img/l2.jpg" alt="就业展示图2">
+                </div>
+                <div class="slide">
+                    <img src="./img/l3.jpg" alt="就业展示图3">
+                </div>
+            </div>
+            <!-- 轮播图指示器 -->
+            <div class="carousel-indicators">
+                <span class="indicator active" data-index="0"></span>
+                <span class="indicator" data-index="1"></span>
+                <span class="indicator" data-index="2"></span>
+            </div>
+            <!-- 左右切换按钮 -->
+            <div class="carousel-controls">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- 实时时钟显示 -->
+        <div class="clock-container">
+            <div id="clock">
+                <div class="time">00:00:00</div>
+                <div class="date">2023年1月1日 星期一</div>
+            </div>
+        </div>
+
+        <!-- 就业概况统计 -->
+        <section class="info-section">
+            <h2 class="section-title">就业概况</h2>
+            <div class="info-cards">
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h3>就业率</h3>
+                    <p class="highlight">98.5%</p>
+                    <p>2023年毕业生就业率创历史新高，远超全国平均水平。</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏢</div>
+                    <h3>合作企业</h3>
+                    <p class="highlight">500+</p>
+                    <p>与国内外知名企业建立长期稳定的合作关系。</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎓</div>
+                    <h3>深造率</h3>
+                    <p class="highlight">35%</p>
+                    <p>越来越多的毕业生选择继续深造，提升竞争力。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 就业服务介绍 -->
+        <section class="feature-section">
+            <h2 class="section-title">就业服务</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>职业规划</h3>
+                    <p>提供个性化的职业规划咨询，帮助学生明确职业目标。</p>
+                </div>
+                <div class="feature">
+                    <h3>简历指导</h3>
+                    <p>专业的简历修改和优化服务，提高简历竞争力。</p>
+                </div>
+                <div class="feature">
+                    <h3>面试培训</h3>
+                    <p>模拟面试训练，提升学生的面试技巧和自信心。</p>
+                </div>
+                <div class="feature">
+                    <h3>就业推荐</h3>
+                    <p>根据学生专业背景，推荐匹配度高的就业岗位。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 成功案例展示 -->
+        <section class="success-stories">
+            <h2 class="section-title">成功案例</h2>
+            <div class="stories">
+                <div class="story">
+                    <div class="story-content">
+                        <h3>张明 - 计算机科学与技术</h3>
+                        <p class="company">现就职于：腾讯科技</p>
+                        <p>通过学校提供的校企合作项目，成功入职腾讯。感谢学校就业指导中心的帮助！</p>
+                    </div>
+                </div>
+                <div class="story">
+                    <div class="story-content">
+                        <h3>李华 - 金融学</h3>
+                        <p class="company">现就职于：中国工商银行</p>
+                        <p>参加学校组织的银行专场招聘会，最终被工商银行录用。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 行动号召区域 -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>寻找适合你的就业机会</h2>
+                <p>浏览最新的就业信息，发现更多可能性</p>
+                <a href="job-info.html" class="btn btn-primary">查看就业信息</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- 网站底部 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于我们</h3>
+                    <p>学生就业信息管理系统致力于为学生提供全面的就业服务。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>联系方式</h3>
+                    <p>电话：123-456-7890</p>
+                    <p>邮箱：career@example.edu.cn</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 学生就业信息管理系统 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 轮播图和时钟功能脚本 -->
+    <script>
+        // 轮播图功能实现
+        class Carousel {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide');
+                this.indicators = document.querySelectorAll('.indicator');
+                this.prevBtn = document.querySelector('.prev');
+                this.nextBtn = document.querySelector('.next');
+                this.currentIndex = 0;
+                this.autoPlayInterval = null;
+                
+                this.init();
+            }
+            
+            // 初始化轮播图
+            init() {
+                this.bindEvents();
+                this.startAutoPlay();
+            }
+            
+            // 绑定事件监听器
+            bindEvents() {
+                // 左右按钮点击事件
+                this.prevBtn.addEventListener('click', () => this.prevSlide());
+                this.nextBtn.addEventListener('click', () => this.nextSlide());
+                
+                // 指示器点击事件
+                this.indicators.forEach((indicator, index) => {
+                    indicator.addEventListener('click', () => this.goToSlide(index));
+                });
+                
+                // 鼠标悬停时暂停自动播放
+                const container = document.querySelector('.carousel-container');
+                container.addEventListener('mouseenter', () => this.stopAutoPlay());
+                container.addEventListener('mouseleave', () => this.startAutoPlay());
+            }
+            
+            // 显示指定索引的幻灯片
+            showSlide(index) {
+                // 移除所有活动状态
+                this.slides.forEach(slide => slide.classList.remove('active'));
+                this.indicators.forEach(indicator => indicator.classList.remove('active'));
+                
+                // 添加当前活动状态
+                this.slides[index].classList.add('active');
+                this.indicators[index].classList.add('active');
+                
+                this.currentIndex = index;
+            }
+            
+            // 下一张幻灯片
+            nextSlide() {
+                const nextIndex = (this.currentIndex + 1) % this.slides.length;
+                this.showSlide(nextIndex);
+            }
+            
+            // 上一张幻灯片
+            prevSlide() {
+                const prevIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+                this.showSlide(prevIndex);
+            }
+            
+            // 跳转到指定幻灯片
+            goToSlide(index) {
+                this.showSlide(index);
+            }
+            
+            // 开始自动播放（5秒间隔）
+            startAutoPlay() {
+                this.autoPlayInterval = setInterval(() => {
+                    this.nextSlide();
+                }, 5000);
+            }
+            
+            // 停止自动播放
+            stopAutoPlay() {
+                if (this.autoPlayInterval) {
+                    clearInterval(this.autoPlayInterval);
+                    this.autoPlayInterval = null;
+                }
+            }
+        }
+        
+        // 实时时钟功能
+        function updateClock() {
+            const now = new Date();
+            const timeElement = document.querySelector('#clock .time');
+            const dateElement = document.querySelector('#clock .date');
+            
+            // 格式化时间
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            timeElement.textContent = `${hours}:${minutes}:${seconds}`;
+            
+            // 格式化日期
+            const year = now.getFullYear();
+            const month = now.getMonth() + 1;
+            const date = now.getDate();
+            const weekdays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            const weekday = weekdays[now.getDay()];
+            dateElement.textContent = `${year}年${month}月${date}日 ${weekday}`;
+        }
+        
+        // 页面加载完成后初始化功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化轮播图
+            new Carousel();
+            
+            // 初始化时钟并每秒更新
+            updateClock();
+            setInterval(updateClock, 1000);
+        });
+    </script>
+</body>
+</html>

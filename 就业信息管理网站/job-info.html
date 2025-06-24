@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>就业信息 - 学生就业信息管理系统</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="./img/logo.png" alt="就业信息管理系统Logo">
+                <h1>学生就业信息管理系统</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="job-info.html" class="active">就业信息</a></li>
+                    <li><a href="admin.html">后台管理</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>就业信息</h1>
+            <p>浏览最新的就业机会和招聘信息</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="job-filter">
+            <div class="search-box">
+                <input type="text" id="job-search" placeholder="搜索职位、公司或地点">
+                <button id="search-btn">搜索</button>
+            </div>
+            <div class="filter-options">
+                <select id="industry-filter">
+                    <option value="">所有行业</option>
+                    <option value="it">IT/互联网</option>
+                    <option value="finance">金融/银行</option>
+                    <option value="education">教育/培训</option>
+                    <option value="manufacturing">制造业</option>
+                    <option value="service">服务业</option>
+                </select>
+                <select id="location-filter">
+                    <option value="">所有地区</option>
+                    <option value="beijing">北京</option>
+                    <option value="shanghai">上海</option>
+                    <option value="guangzhou">广州</option>
+                    <option value="shenzhen">深圳</option>
+                    <option value="hangzhou">杭州</option>
+                </select>
+                <select id="job-type-filter">
+                    <option value="">所有类型</option>
+                    <option value="fulltime">全职</option>
+                    <option value="parttime">兼职</option>
+                    <option value="intern">实习</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="job-list">
+            <div class="job-card">
+                <div class="job-header">
+                    <h3 class="job-title">前端开发工程师</h3>
+                    <span class="job-salary">15k-25k</span>
+                </div>
+                <div class="job-company">
+                    <span class="company-name">腾讯科技</span>
+                    <span class="job-location">深圳</span>
+                    <span class="job-type">全职</span>
+                </div>
+                <div class="job-description">
+                    <p>负责公司产品的前端开发工作，包括但不限于PC端、移动端的页面开发和优化。</p>
+                    <ul class="job-requirements">
+                        <li>熟练掌握HTML5、CSS3、JavaScript等前端技术</li>
+                        <li>熟悉Vue、React等前端框架</li>
+                        <li>有良好的代码风格和团队协作能力</li>
+                        <li>计算机相关专业本科及以上学历</li>
+                    </ul>
+                </div>
+                <div class="job-footer">
+                    <span class="job-date">发布日期：2023-06-15</span>
+                    <a href="#" class="btn btn-apply">申请职位</a>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-header">
+                    <h3 class="job-title">Java后端开发工程师</h3>
+                    <span class="job-salary">20k-35k</span>
+                </div>
+                <div class="job-company">
+                    <span class="company-name">阿里巴巴</span>
+                    <span class="job-location">杭州</span>
+                    <span class="job-type">全职</span>
+                </div>
+                <div class="job-description">
+                    <p>负责公司核心业务系统的设计、开发和维护工作。</p>
+                    <ul class="job-requirements">
+                        <li>精通Java编程语言和常用设计模式</li>
+                        <li>熟悉Spring、SpringBoot、MyBatis等框架</li>
+                        <li>熟悉MySQL、Redis等数据库</li>
+                        <li>计算机相关专业本科及以上学历，3年以上相关工作经验</li>
+                    </ul>
+                </div>
+                <div class="job-footer">
+                    <span class="job-date">发布日期：2023-06-10</span>
+                    <a href="#" class="btn btn-apply">申请职位</a>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-header">
+                    <h3 class="job-title">数据分析师</h3>
+                    <span class="job-salary">15k-25k</span>
+                </div>
+                <div class="job-company">
+                    <span class="company-name">字节跳动</span>
+                    <span class="job-location">北京</span>
+                    <span class="job-type">全职</span>
+                </div>
+                <div class="job-description">
+                    <p>负责公司业务数据的分析和挖掘，为产品决策提供数据支持。</p>
+                    <ul class="job-requirements">
+                        <li>熟悉数据分析方法和工具，如Python、SQL、Excel等</li>
+                        <li>具备良好的数据敏感度和分析能力</li>
+                        <li>有数据可视化经验者优先</li>
+                        <li>统计学、数学、计算机等相关专业本科及以上学历</li>
+                    </ul>
+                </div>
+                <div class="job-footer">
+                    <span class="job-date">发布日期：2023-06-08</span>
+                    <a href="#" class="btn btn-apply">申请职位</a>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-header">
+                    <h3 class="job-title">产品经理</h3>
+                    <span class="job-salary">18k-30k</span>
+                </div>
+                <div class="job-company">
+                    <span class="company-name">百度</span>
+                    <span class="job-location">北京</span>
+                    <span class="job-type">全职</span>
+                </div>
+                <div class="job-description">
+                    <p>负责公司产品的规划、设计和迭代优化工作。</p>
+                    <ul class="job-requirements">
+                        <li>具备良好的产品思维和用户体验意识</li>
+                        <li>熟悉产品设计流程和方法</li>
+                        <li>有良好的沟通协调能力和团队合作精神</li>
+                        <li>本科及以上学历，2年以上互联网产品经理经验</li>
+                    </ul>
+                </div>
+                <div class="job-footer">
+                    <span class="job-date">发布日期：2023-06-05</span>
+                    <a href="#" class="btn btn-apply">申请职位</a>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-header">
+                    <h3 class="job-title">人力资源专员</h3>
+                    <span class="job-salary">8k-15k</span>
+                </div>
+                <div class="job-company">
+                    <span class="company-name">京东</span>
+                    <span class="job-location">北京</span>
+                    <span class="job-type">全职</span>
+                </div>
+                <div class="job-description">
+                    <p>负责公司的招聘、培训、绩效管理等人力资源工作。</p>
+                    <ul class="job-requirements">
+                        <li>熟悉人力资源各模块工作</li>
+                        <li>具备良好的沟通能力和服务意识</li>
+                        <li>有互联网公司人力资源工作经验者优先</li>
+                        <li>人力资源管理或相关专业本科及以上学历</li>
+                    </ul>
+                </div>
+                <div class="job-footer">
+                    <span class="job-date">发布日期：2023-06-01</span>
+                    <a href="#" class="btn btn-apply">申请职位</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#" class="next">下一页 &raquo;</a>
+        </div>
+
+        <section class="industry-analysis">
+            <h2 class="section-title">行业分析</h2>
+            <div class="analysis-content">
+                <div class="analysis-chart">
+                    <div class="chart-placeholder">行业薪资分布图表</div>
+                </div>
+                <div class="analysis-text">
+                    <h3>2023年就业市场趋势分析</h3>
+                    <p>根据最新的就业数据统计，IT/互联网、人工智能、大数据、云计算等技术领域的人才需求持续增长，平均薪资水平也保持上升趋势。金融科技、医疗健康、教育科技等融合型产业也展现出强劲的发展势头。</p>
+                    <p>从地域分布来看，北京、上海、深圳、杭州等一线城市和新一线城市的就业机会最为集中，但随着区域发展战略的推进，成都、西安、武汉等中西部城市的就业市场也在快速扩张。</p>
+                    <p>从能力要求来看，除了专业技能外，企业越来越重视应聘者的学习能力、创新思维、团队协作和抗压能力等综合素质。多语言能力、国际视野和跨文化交流能力在某些行业也成为重要的竞争优势。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="company-showcase">
+            <h2 class="section-title">优质企业展示</h2>
+            <div class="company-list">
+                <div class="company-item">
+                    <div class="company-logo placeholder">腾讯Logo</div>
+                    <h3>腾讯</h3>
+                    <p>中国领先的互联网增值服务提供商，专注于社交、游戏、数字内容等领域</p>
+                </div>
+                <div class="company-item">
+                    <div class="company-logo placeholder">阿里巴巴Logo</div>
+                    <h3>阿里巴巴</h3>
+                    <p>全球最大的零售商之一，提供电子商务、云计算、数字媒体等服务</p>
+                </div>
+                <div class="company-item">
+                    <div class="company-logo placeholder">华为Logo</div>
+                    <h3>华为</h3>
+                    <p>全球领先的ICT基础设施和智能终端提供商</p>
+                </div>
+                <div class="company-item">
+                    <div class="company-logo placeholder">百度Logo</div>
+                    <h3>百度</h3>
+                    <p>中国最大的搜索引擎公司，专注于人工智能和互联网信息服务</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于我们</h3>
+                    <p>学生就业信息管理系统致力于为学生提供全面的就业服务和信息支持，帮助学生实现理想就业。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>联系方式</h3>
+                    <p>电话：123-456-7890</p>
+                    <p>邮箱：career@example.edu.cn</p>
+                    <p>地址：某某市某某区某某路123号</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 学生就业信息管理系统 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
